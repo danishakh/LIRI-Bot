@@ -1,0 +1,24 @@
+{
+  "name": "liri-bot",
+  "version": "1.0.0",
+  "description": "LIRI bot is a language interpretation and recognition interface. LIRI will be a command line node app that takes in parameters and gives you back data. ",
+  "main": "liri.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danishakh/LIRI-Bot.git"
+  },
+  "author": "Danish Akhtar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danishakh/LIRI-Bot/issues"
+  },
+  "dependencies": {
+    "request": "*",
+    "twitter": "*",
+    "node-spotify-api": "*"
+  },
+  "homepage": "https://github.com/danishakh/LIRI-Bot#readme"
+}
