@@ -13,10 +13,6 @@ process.env.TWITTER_CONSUMER_SECRET = myKeys.twitterKeys.consumer_secret;
 process.env.TWITTER_ACCESS_TOKEN_KEY = myKeys.twitterKeys.access_token_key;
 process.env.TWITTER_ACCESS_TOKEN_SECRET = myKeys.twitterKeys.access_token_secret;
 
-// Save Spotify Keys to environmental variables
-process.env.SPOTIFY_CLIENT_ID = myKeys.spotifyKeys.client_id;
-process.env.SPOTIFY_CLIENT_SECRET = myKeys.spotifyKeys.client_secret;
-
 // Initialize new twitter instance for user-based authentication
 var client = new Twitter({
 	consumer_key: process.env.TWITTER_CONSUMER_KEY,
@@ -25,6 +21,10 @@ var client = new Twitter({
 	access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
 });
 
+// Save Spotify Keys to environmental variables
+process.env.SPOTIFY_CLIENT_ID = myKeys.spotifyKeys.client_id;
+process.env.SPOTIFY_CLIENT_SECRET = myKeys.spotifyKeys.client_secret;
+
 // Initialize new spotify instance for user based authentication
 var spotify = new Spotify({
   id: process.env.SPOTIFY_CLIENT_ID,
@@ -32,24 +32,21 @@ var spotify = new Spotify({
 });
 
 // Allowed commands
-var commands = ['my-tweets', 'spotify-this-song', 'movie-this', 'do-what-it-says'];
+var commands = ['my-tweets', 'spotify-this-song', 'movie-this', 'do-what-it-says', 'help'];
 
 // Store all of the arguments in an array
 var nodeArgs = process.argv;
 
 // Function to get user's latest 10 tweets
 function getLatestTweets() {
-	//GET https://api.twitter.com/1.1/statuses/home_timeline.json
 	client.get('statuses/user_timeline', {count: 10} ,(error, tweets, response) => {
 		if(error) {
 			console.log(error);
-			//throw error;
 		}
 		for(var i = 0; i < tweets.length; i++) {
 			console.log(tweets[i].created_at);
 			console.log(tweets[i].text);
 		}
-		//console.log(tweets[0].text);
 	});
 }
 
@@ -67,11 +64,6 @@ function getSpotifyTrack() {
 			if (err) {
 		    	return console.log('Error occurred: ' + err);
 		  	}
-		 	
-		 	// for (var i = 0; i < data.tracks.items.length; i++){
-		 	// 	console.log(data.tracks.items[i].name); 
-		 	// }
-
 		 	console.log('* Artist: ' + data.tracks.items[7].artists[0].name);
 		 	console.log('* Track: ' + data.tracks.items[7].name); 	
 		 	console.log('* Preview URL: ' + data.tracks.items[7].preview_url);
@@ -88,7 +80,6 @@ function getSpotifyTrack() {
 			if (err) {
 		    	return console.log('Error occurred: ' + err);
 		  	}
-
 		 	console.log('* Artist: ' + data.tracks.items[0].artists[0].name);
 		 	console.log('* Track: ' + data.tracks.items[0].name); 	
 		 	console.log('* Preview URL: ' + data.tracks.items[0].preview_url);
@@ -107,7 +98,6 @@ function getMovie() {
 	if(nodeArgs.length === 3) {
 		movieName = 'Mr.+Nobody';
 
-		// Then run a request to the OMDB API with the movie specified
 		var queryUrl = "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=trilogy";
 
 		request(queryUrl, (error, response, body) => {
@@ -135,7 +125,6 @@ function getMovie() {
 			movieName = movieName + '+' + nodeArgs[i];
 		}
 
-		// Then run a request to the OMDB API with the movie specified
 		var queryUrl = "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=trilogy";
 
 		request(queryUrl, (error, response, body) => {
