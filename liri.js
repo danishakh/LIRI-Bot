@@ -27,8 +27,8 @@ process.env.SPOTIFY_CLIENT_SECRET = myKeys.spotifyKeys.client_secret;
 
 // Initialize new spotify instance for user based authentication
 var spotify = new Spotify({
-  id: process.env.SPOTIFY_CLIENT_ID,
-  secret: process.env.SPOTIFY_CLIENT_SECRET
+	id: process.env.SPOTIFY_CLIENT_ID,
+	secret: process.env.SPOTIFY_CLIENT_SECRET
 });
 
 // Allowed commands
@@ -47,6 +47,12 @@ function getLatestTweets() {
 			console.log(tweets[i].created_at);
 			console.log(tweets[i].text);
 		}
+	});
+
+	// Logging
+	fs.appendFile('logs.txt', '\n node liri.js my-tweets' + '\n---------------------------------------', (err) => {  
+	    if (err) throw err;
+	    console.log('Log file updated!');
 	});
 }
 
@@ -69,6 +75,12 @@ function getSpotifyTrack() {
 		 	console.log('* Preview URL: ' + data.tracks.items[7].preview_url);
 		 	console.log('* Album: ' + data.tracks.items[7].album.name);
 		});
+
+		// Logging
+		fs.appendFile('logs.txt', '\n node liri.js spotify-this-song ' + trackName + '\n---------------------------------------', (err) => {  
+		    if (err) throw err;
+		    console.log('Log file updated!');
+		});
 	}
 	else {
 		for(var i = 4; i < nodeArgs.length; i++) {
@@ -84,6 +96,12 @@ function getSpotifyTrack() {
 		 	console.log('* Track: ' + data.tracks.items[0].name); 	
 		 	console.log('* Preview URL: ' + data.tracks.items[0].preview_url);
 		 	console.log('* Album: ' + data.tracks.items[0].album.name);
+		});
+
+		// Logging
+		fs.appendFile('logs.txt', '\n node liri.js spotify-this-song ' + trackName + '\n---------------------------------------', (err) => {  
+		    if (err) throw err;
+		    console.log('Log file updated!');
 		});
 	}
 
@@ -118,6 +136,12 @@ function getMovie() {
 		  		console.log(error);
 		  	}
 		});
+
+		// Logging
+		fs.appendFile('logs.txt', '\n node liri.js movie-this ' + movieName + '\n---------------------------------------', (err) => {  
+		    if (err) throw err;
+		    console.log('Log file updated!');
+		});
 	}
 	else {
 		// Loop through the arguments after the command argument, and put them together into 'movieName'
@@ -145,7 +169,12 @@ function getMovie() {
 		  		console.log(error);
 		  	}
 		});
-		
+
+		// Logging
+		fs.appendFile('logs.txt', '\n node liri.js movie-this ' + movieName + '\n---------------------------------------', (err) => {  
+		    if (err) throw err;
+		    console.log('Log file updated!');
+		});
 	}
 }
 

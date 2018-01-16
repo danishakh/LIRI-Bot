@@ -1,0 +1,11 @@
+
+ node liri.js my-tweets
+---------------------------------------
+ node liri.js spotify-this-song fade to black
+---------------------------------------
+ node liri.js spotify-this-song the sign
+---------------------------------------
+ node liri.js movie-this space+jam
+---------------------------------------
+ node liri.js movie-this A+Walk+To+Remember
+---------------------------------------
