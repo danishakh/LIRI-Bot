@@ -9,3 +9,87 @@
 ---------------------------------------
  node liri.js movie-this A+Walk+To+Remember
 ---------------------------------------
+ node liri.js my-tweets
+---------------------------------------
+ node liri.js spotify-this-song bom diggy
+---------------------------------------
+ node liri.js movie-this random.txt+A+Walk+To+Remember
+---------------------------------------
+ node liri.js movie-this A+Walk+To+Remember
+---------------------------------------
+ node liri.js spotify-this-song anjane
+---------------------------------------
+ node liri.js spotify anjane
+---------------------------------------
+ node liri.js spotify anjane
+---------------------------------------
+ node liri spotify bom diggy
+---------------------------------------
+ node liri spotify bom diggy
+---------------------------------------
+ node liri spotify bom diggy
+---------------------------------------
+ node liri spotify secrets
+---------------------------------------
+ node liri spotify secrets the weekend
+---------------------------------------
+ node liri spotify what you want
+---------------------------------------
+ node liri spotify girls like you
+---------------------------------------
+ node liri spotify girls like you
+---------------------------------------
+ node liri spotify girls like you
+---------------------------------------
+ node liri spotify girls like you
+---------------------------------------
+ node liri spotify girls like you
+---------------------------------------
+ node liri spotify anjane
+---------------------------------------
+ node liri spotify anjane
+---------------------------------------
+ node liri spotify im upset
+---------------------------------------
+ node liri movie jungle+book
+---------------------------------------
+ node liri movie the+matrix
+---------------------------------------
+ node liri movie bourne+supremacy
+---------------------------------------
+ node liri movie barfi
+---------------------------------------
+ node liri movie ranbir+kapoor
+---------------------------------------
+ node liri movie the+shining
+---------------------------------------
+ node liri weather toronto
+---------------------------------------
+ node liri.js my-tweets
+---------------------------------------
+ node liri movie rush
+---------------------------------------
+ node liri spotify the sign
+---------------------------------------
+ node liri spotify dance of death
+---------------------------------------
+ node liri spotify dance of death iron maiden
+---------------------------------------
+ node liri spotify sign dance
+---------------------------------------
+ node liri spotify dance dance of death iron maiden
+---------------------------------------
+ node liri spotify dance dance aerosmith
+---------------------------------------
+ node liri spotify dance aerosmith
+---------------------------------------
+ node liri spotify aerosmith
+---------------------------------------
+ node liri movie spiderman+into+uverse
+---------------------------------------
+ node liri movie spiderman
+---------------------------------------
+ node liri movie the+amazing+spiderman
+---------------------------------------
+ node liri movie aquaman
+---------------------------------------

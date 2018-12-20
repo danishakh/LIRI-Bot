@@ -16,9 +16,10 @@
     "url": "https://github.com/danishakh/LIRI-Bot/issues"
   },
   "dependencies": {
+    "node-spotify-api": "*",
     "request": "*",
     "twitter": "*",
-    "node-spotify-api": "*"
+    "weather-js": "^2.0.0"
   },
   "homepage": "https://github.com/danishakh/LIRI-Bot#readme"
 }
