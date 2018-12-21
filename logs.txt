@@ -93,3 +93,9 @@
 ---------------------------------------
  node liri movie aquaman
 ---------------------------------------
+ node liri weather london+usa
+---------------------------------------
+ node liri weather london+indiana
+---------------------------------------
+ node liri weather toronto
+---------------------------------------
